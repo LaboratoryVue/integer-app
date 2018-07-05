@@ -15,6 +15,9 @@ export default new Vuex.Store({
     },
     INIT_ORDERS(state) {
       state.orders = db.orders;
+    },
+    REMOVE_ORDER(state, payload) {
+      state.orders = state.orders.filter(el => el.id !== payload);
     }
   },
   getters: {
@@ -34,6 +37,9 @@ export default new Vuex.Store({
     initData({ commit }) {
       commit('INIT_MANAGERS');
       commit('INIT_ORDERS');
+    },
+    editOrder({ commit }, payload) {
+      commit('REMOVE_ORDER', payload);
     }
   }
 });

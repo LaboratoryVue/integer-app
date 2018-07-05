@@ -6,6 +6,7 @@
         <th class="caption__item" scope="col">title</th>
         <th class="caption__item" scope="col">price</th>
         <th class="caption__item" scope="col">description</th>
+        <th class="caption__item" scope="col">edit</th>
       </tr>
     </thead>
     <tbody>
