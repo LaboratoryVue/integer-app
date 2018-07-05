@@ -33,16 +33,30 @@ export default new Vuex.Store({
           state.orders.sort((a, b) => (Number(a.id) - Number(b.id)));
         }
         state.flags[0] = !state.flags[0];
-        // console.log(`sort by id`);
       }
       if (payload === 'title') {
-        console.log(`sort by title`);
+        if (state.flags[1]) {
+          state.orders.sort((a, b) => (Number(b.title) > Number(a.title)));
+        } else {
+          state.orders.sort((a, b) => (Number(a.title) > Number(b.title)));
+        }
+        state.flags[1] = !state.flags[1];
       }
       if (payload === 'price') {
-        console.log(`sort by price`);
+        if (state.flags[2]) {
+          state.orders.sort((a, b) => (Number(b.price) - Number(a.price)));
+        } else {
+          state.orders.sort((a, b) => (Number(a.price) - Number(b.price)));
+        }
+        state.flags[2] = !state.flags[2];
       }
       if (payload === 'description') {
-        console.log(`sort by description`);
+        if (state.flags[3]) {
+          state.orders.sort((a, b) => (Number(b.description) > Number(a.description)));
+        } else {
+          state.orders.sort((a, b) => (Number(a.description) > Number(b.description)));
+        }
+        state.flags[3] = !state.flags[3];
       }
     }
   },
