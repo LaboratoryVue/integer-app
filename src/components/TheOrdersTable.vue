@@ -9,50 +9,52 @@
         <th class="caption__item" scope="col">edit</th>
       </tr>
     </thead>
-    <tbody>
+    <transition-group tag="tbody" name="list-anima" enter-active-class="animated zoomInLeft" leave-active-class="animated zoomOutRight" mode="out-in">
       <OrdersTableItem v-for="order in orders" :key="order.id" :order="order" />
-    </tbody>
+    </transition-group>
   </table>
 </template>
 
 <script>
-  import OrdersTableItem from '@/components/OrdersTableItem';
-  export default {
-    name: 'TheOrderTable',
-    components: {
-      OrdersTableItem
-    },
-    computed: {
-      orders() {
-        return this.$store.getters.getAllOrders;
-      }
-    },
-    methods: {
-      onSort(value) {
-        this.$store.dispatch('sortOrders', value)
-      }
+import OrdersTableItem from '@/components/OrdersTableItem';
+export default {
+  name: 'TheOrderTable',
+  components: {
+    OrdersTableItem
+  },
+  computed: {
+    orders() {
+      return this.$store.getters.getAllOrders;
     }
-  };
+  },
+  methods: {
+    onSort(value) {
+      this.$store.dispatch('sortOrders', value);
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-  .caption {
-    //
-    &__item {
-      text-transform: uppercase;
-      text-align: center;
-      font-size: .96rem;
+.caption {
+  //
+  &__item {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 0.96rem;
 
-      &--sortable {
-        transition: color .2s;
-        cursor: pointer;
-        color: forestgreen;
+    &--sortable {
+      transition: color 0.2s;
+      cursor: pointer;
+      color: forestgreen;
 
-        &:hover {
-          color: darkgreen;
-        }
+      &:hover {
+        color: darkgreen;
       }
-
     }
   }
+}
+.list-anima-move {
+  transition: transform 0.6s;
+}
 </style>
