@@ -7,7 +7,9 @@
     </div>
     <div class="row">
       <div class="col">
-        <router-view />
+        <transition name="router-anim" enter-active-class="animated fadeInLeft" leave-active-class="animated fadeOutRight" mode="out-in">
+          <router-view />
+        </transition>
       </div>
     </div>
   </div>

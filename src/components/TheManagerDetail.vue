@@ -16,21 +16,19 @@
           </li>
         </ul>
       </section>
-      <transition name="fade">
-        <section>
-          <h6 class="card-title text-capitalize manager__title">{{ managerFullName }} orders</h6>
-          <div class="list-group">
-            <a
-              v-for="order in manager.orders"
-              :key="order.id"
-              href="#"
-              class="list-group-item list-group-item-action d-flex justify-content-between align-items-center mb-1">
-              <span class="text-capitalize">order id: {{ order.id }}</span>
-              <span class="text-capitalize">order amount: {{ order.amount }}</span>
-            </a>
-          </div>
-        </section>
-      </transition>
+      <section>
+        <h6 class="card-title text-capitalize manager__title">{{ managerFullName }} orders</h6>
+        <div class="list-group">
+          <a
+            v-for="order in manager.orders"
+            :key="order.id"
+            href="#"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center mb-1">
+            <span class="text-capitalize">order id: {{ order.id }}</span>
+            <span class="text-capitalize">order amount: {{ order.amount }}</span>
+          </a>
+        </div>
+      </section>
     </div>
   </div>
 </template>
@@ -46,32 +44,23 @@ export default {
       return this.$store.getters.getSelectedManager(this.id);
     },
     managerFullName() {
-      return `${this.manager.firstName} ${this.manager.lastName}`
+      return `${this.manager.firstName} ${this.manager.lastName}`;
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-  .manager {
-    //
-    &__title {
-      font-weight: 700;
-    }
-    &__detail {
-      text-transform: uppercase;
-      font-weight: 700;
-      margin-right: .2rem;
-      font-size: 1rem;
-    }
+.manager {
+  //
+  &__title {
+    font-weight: 700;
   }
-  // -------------
-  // ANIMATION
-  // -------------
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity .5s;
+  &__detail {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-right: 0.2rem;
+    font-size: 1rem;
   }
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-    opacity: 0;
-  }
+}
 </style>
