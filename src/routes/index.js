@@ -14,9 +14,7 @@ export default [
     path: '/managers',
     name: 'managers',
     component: Managers,
-    children: [
-      { path: ':id', component: ManagerDetail, name: 'manager' }
-    ]
+    children: [{ path: ':id', component: ManagerDetail, name: 'manager' }]
   },
   {
     path: '/orders',

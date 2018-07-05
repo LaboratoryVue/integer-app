@@ -1,4 +1,5 @@
 <template>
+<transition name="router-child-anim" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut" mode="out-in">
   <div class="card manager">
     <img class="card-img-top" :src="manager.photo" :alt="manager.firstName">
     <div class="card-body">
@@ -31,6 +32,7 @@
       </section>
     </div>
   </div>
+  </transition>
 </template>
 
 <script>

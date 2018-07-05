@@ -13,9 +13,7 @@
       </div>
     </div>
     <div class="col-xs-12 col-md-8">
-      <transition name="router-anim" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut" mode="out-in">
-        <router-view />
-      </transition>
+      <router-view />
     </div>
   </div>
 </template>
