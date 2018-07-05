@@ -2,10 +2,10 @@
   <table class="table table-striped">
     <thead>
       <tr class="caption">
-        <th class="caption__item" scope="col">id</th>
-        <th class="caption__item" scope="col">title</th>
-        <th class="caption__item" scope="col">price</th>
-        <th class="caption__item" scope="col">description</th>
+        <th @click="onSort(`id`)" class="caption__item" scope="col">id</th>
+        <th @click="onSort(`title`)" class="caption__item" scope="col">title</th>
+        <th @click="onSort(`price`)" class="caption__item" scope="col">price</th>
+        <th @click="onSort(`description`)" class="caption__item" scope="col">description</th>
         <th class="caption__item" scope="col">edit</th>
       </tr>
     </thead>
@@ -25,6 +25,11 @@
     computed: {
       orders() {
         return this.$store.getters.getAllOrders;
+      }
+    },
+    methods: {
+      onSort(value) {
+        this.$store.dispatch('sortOrders', value)
       }
     }
   };

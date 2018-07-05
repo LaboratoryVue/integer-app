@@ -23,6 +23,22 @@ export default new Vuex.Store({
       state.managers.forEach(manager => {
         manager.orders = manager.orders.filter(order => order.id !== payload)
       });
+    },
+    SORT_ORDERS(state, payload) {
+      if (payload === 'id') {
+        console.log(`sort by id`);
+        // state.orders = state.orders.sort((a, b) => (Number(a.id) - Number(b.id)));
+        state.orders.sort((a, b) => (Number(a.id) - Number(b.id)));
+      }
+      if (payload === 'title') {
+        console.log(`sort by title`);
+      }
+      if (payload === 'price') {
+        console.log(`sort by price`);
+      }
+      if (payload === 'description') {
+        console.log(`sort by description`);
+      }
     }
   },
   getters: {
@@ -45,6 +61,9 @@ export default new Vuex.Store({
     },
     editOrder({ commit }, payload) {
       commit('REMOVE_ORDER', payload);
+    },
+    sortOrders({ commit }, payload) {
+      commit('SORT_ORDERS', payload);
     }
   }
 });
