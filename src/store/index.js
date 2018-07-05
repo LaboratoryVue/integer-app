@@ -24,39 +24,43 @@ export default new Vuex.Store({
       state.orders = state.orders.filter(el => el.id !== payload);
       // => filter orders in managers
       state.managers.forEach(manager => {
-        manager.orders = manager.orders.filter(order => order.id !== payload)
+        manager.orders = manager.orders.filter(order => order.id !== payload);
       });
     },
     SORT_ORDERS(state, payload) {
       if (payload === 'id') {
         if (state.flags[0]) {
-          state.orders.sort((a, b) => (Number(b.id) - Number(a.id)));
+          state.orders.sort((a, b) => Number(b.id) - Number(a.id));
         } else {
-          state.orders.sort((a, b) => (Number(a.id) - Number(b.id)));
+          state.orders.sort((a, b) => Number(a.id) - Number(b.id));
         }
         state.flags[0] = !state.flags[0];
       }
       if (payload === 'title') {
         if (state.flags[1]) {
-          state.orders.sort((a, b) => (String(b.title) > String(a.title)));
+          state.orders.sort((a, b) => String(b.title) > String(a.title));
         } else {
-          state.orders.sort((a, b) => (String(a.title) > String(b.title)));
+          state.orders.sort((a, b) => String(a.title) > String(b.title));
         }
         state.flags[1] = !state.flags[1];
       }
       if (payload === 'price') {
         if (state.flags[2]) {
-          state.orders.sort((a, b) => (Number(b.price) - Number(a.price)));
+          state.orders.sort((a, b) => Number(b.price) - Number(a.price));
         } else {
-          state.orders.sort((a, b) => (Number(a.price) - Number(b.price)));
+          state.orders.sort((a, b) => Number(a.price) - Number(b.price));
         }
         state.flags[2] = !state.flags[2];
       }
       if (payload === 'description') {
         if (state.flags[3]) {
-          state.orders.sort((a, b) => (String(b.description) > String(a.description)));
+          state.orders.sort(
+            (a, b) => String(b.description) > String(a.description)
+          );
         } else {
-          state.orders.sort((a, b) => (String(a.description) > String(b.description)));
+          state.orders.sort(
+            (a, b) => String(a.description) > String(b.description)
+          );
         }
         state.flags[3] = !state.flags[3];
       }
@@ -68,10 +72,13 @@ export default new Vuex.Store({
         const newOrder = {
           ...payload,
           date: new Date()
-        }
+        };
         state.orders.push(newOrder);
         // => add to manager list
-        state.managers[0].orders.push(newOrder);
+        const index = state.managers.findIndex(
+          manager => manager.id === state.currentManager.id
+        );
+        state.managers[index].orders.push(newOrder);
       }
     }
   },
@@ -83,9 +90,9 @@ export default new Vuex.Store({
       return state.currentManager;
     },
     getSelectedManager(state) {
-      return (id) => {
+      return id => {
         return state.managers.find(el => el.id === id);
-      }
+      };
     },
     getAllOrders(state) {
       return state.orders;
@@ -103,7 +110,7 @@ export default new Vuex.Store({
       commit('SORT_ORDERS', payload);
     },
     addOrder({ commit }, payload) {
-      commit('ADD_ORDER', payload)
+      commit('ADD_ORDER', payload);
     }
   }
 });
