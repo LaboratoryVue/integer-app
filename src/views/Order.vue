@@ -42,7 +42,7 @@ export default {
         description: null,
         price: null
       }
-    }
+    };
   },
   methods: {
     onSubmit() {
@@ -51,6 +51,7 @@ export default {
       for (let key in this.order) {
         this.order[key] = null;
       }
+      this.$router.push({ name: 'orders' });
     }
   },
   computed: {
@@ -65,17 +66,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .order {
-    //
-    &__label {
-      font-weight: 700;
-      text-transform: capitalize;
-      margin-bottom: .1rem;
-      margin-left: .6rem;
+.order {
+  //
+  &__label {
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-bottom: 0.1rem;
+    margin-left: 0.6rem;
 
-      &:after {
-        content: ':';
-      }
+    &:after {
+      content: ':';
     }
   }
+}
 </style>
