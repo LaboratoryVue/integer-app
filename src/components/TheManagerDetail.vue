@@ -2,18 +2,32 @@
   <div class="card manager">
     <img class="card-img-top" :src="manager.photo" :alt="manager.firstName">
     <div class="card-body">
-      <h5 class="card-title text-capitalize manager__title">{{ managerFullName }}</h5>
-      <ul class="list-group">
-        <li class="list-group-item">
-          <span class="manager__detail">id:</span><span>{{ manager.id }}</span>
-        </li>
-        <li class="list-group-item">
-          <span class="manager__detail">email:</span><span>{{ manager.email }}</span>
-        </li>
-        <li class="list-group-item">
-          <span class="manager__detail">phone:</span><span>{{ manager.phone }}</span>
-        </li>
-      </ul>
+      <section class="mb-4">
+        <h5 class="card-title text-capitalize manager__title">{{ managerFullName }}</h5>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <span class="manager__detail">id:</span><span>{{ manager.id }}</span>
+          </li>
+          <li class="list-group-item">
+            <span class="manager__detail">email:</span><span>{{ manager.email }}</span>
+          </li>
+          <li class="list-group-item">
+            <span class="manager__detail">phone:</span><span>{{ manager.phone }}</span>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h6 class="card-title text-capitalize manager__title">{{ managerFullName }} orders</h6>
+        <div class="list-group">
+          <a
+            v-for="order in manager.orders"
+            :key="order"
+            href="#"
+            class="list-group-item list-group-item-action">
+              <span>{{ order.title }}</span>
+            </a>
+        </div>
+      </section>
     </div>
   </div>
 </template>

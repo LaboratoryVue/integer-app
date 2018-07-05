@@ -26,6 +26,8 @@
       "lastName": "jackson",
       "age": "29",
       "gender": "male",
+      "phone": "79505003040",
+      "email": "kevin.jackson@mail.ru",
       "photo": "http://via.placeholder.com/350x150",
       "orders": [
         {
