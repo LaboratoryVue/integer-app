@@ -1,11 +1,15 @@
 <template>
   <div class="orders">
-    <h1>This is a orders page</h1>
+    <orders-table />
   </div>
 </template>
 
 <script>
+import OrdersTable from '@/components/TheOrdersTable';
 export default {
-  name: 'orders'
+  name: 'orders',
+  components: {
+    OrdersTable
+  }
 };
 </script>

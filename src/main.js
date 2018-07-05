@@ -10,7 +10,7 @@ new Vue({
   router,
   store,
   created() {
-    this.$store.dispatch('initManagers');
+    this.$store.dispatch('initData');
   },
   render: h => h(App)
 }).$mount('#app');
