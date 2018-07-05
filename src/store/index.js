@@ -17,7 +17,12 @@ export default new Vuex.Store({
       state.orders = db.orders;
     },
     REMOVE_ORDER(state, payload) {
+      // => filter orders table
       state.orders = state.orders.filter(el => el.id !== payload);
+      // => filter orders in managers
+      state.managers.forEach(manager => {
+        manager.orders = manager.orders.filter(order => order.id !== payload)
+      });
     }
   },
   getters: {

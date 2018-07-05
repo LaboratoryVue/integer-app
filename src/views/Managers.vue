@@ -8,6 +8,7 @@
           :to="'/managers/' + manager.id"
           class="list-group-item list-group-item-action managers__item">
             <span class="text-capitalize">{{ manager.firstName }} {{ manager.lastName }}</span>
+          <span class="badge badge-info badge-pill">{{ manager.orders.length }}</span>
         </router-link>
       </div>
     </div>
@@ -31,6 +32,11 @@ export default {
 <style lang="scss" scoped>
   .managers {
     //
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
     &__item:not(:last-child) {
       margin-bottom: .2rem;
     }

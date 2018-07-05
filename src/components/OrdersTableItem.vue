@@ -19,7 +19,6 @@
     },
     methods: {
       onEdit(value) {
-        // console.log(`${value}`);
         this.$store.dispatch('editOrder', value);
       }
     }
