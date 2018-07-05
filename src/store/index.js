@@ -7,12 +7,14 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     managers: [],
+    currentManager: {},
     orders: [],
     flags: [true, true, true, true]
   },
   mutations: {
     INIT_MANAGERS(state) {
       state.managers = db.managers;
+      state.currentManager = db.managers[0];
     },
     INIT_ORDERS(state) {
       state.orders = db.orders;
@@ -58,11 +60,27 @@ export default new Vuex.Store({
         }
         state.flags[3] = !state.flags[3];
       }
+    },
+    ADD_ORDER(state, payload) {
+      const sample = state.orders.find(order => order.id === payload.id);
+      if (!sample) {
+        // => add to orders list
+        const newOrder = {
+          ...payload,
+          date: new Date()
+        }
+        state.orders.push(newOrder);
+        // => add to manager list
+        state.managers[0].orders.push(newOrder);
+      }
     }
   },
   getters: {
     getManagers(state) {
       return state.managers;
+    },
+    getCurrentManager(state) {
+      return state.currentManager;
     },
     getSelectedManager(state) {
       return (id) => {
@@ -83,6 +101,9 @@ export default new Vuex.Store({
     },
     sortOrders({ commit }, payload) {
       commit('SORT_ORDERS', payload);
+    },
+    addOrder({ commit }, payload) {
+      commit('ADD_ORDER', payload)
     }
   }
 });
