@@ -7,7 +7,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     managers: [],
-    orders: []
+    orders: [],
+    flags: [true, true, true, true]
   },
   mutations: {
     INIT_MANAGERS(state) {
@@ -26,9 +27,13 @@ export default new Vuex.Store({
     },
     SORT_ORDERS(state, payload) {
       if (payload === 'id') {
-        console.log(`sort by id`);
-        // state.orders = state.orders.sort((a, b) => (Number(a.id) - Number(b.id)));
-        state.orders.sort((a, b) => (Number(a.id) - Number(b.id)));
+        if (state.flags[0]) {
+          state.orders.sort((a, b) => (Number(b.id) - Number(a.id)));
+        } else {
+          state.orders.sort((a, b) => (Number(a.id) - Number(b.id)));
+        }
+        state.flags[0] = !state.flags[0];
+        // console.log(`sort by id`);
       }
       if (payload === 'title') {
         console.log(`sort by title`);
