@@ -2,10 +2,10 @@
   <table class="table table-striped">
     <thead>
       <tr class="caption">
-        <th @click="onSort(`id`)" class="caption__item" scope="col">id</th>
-        <th @click="onSort(`title`)" class="caption__item" scope="col">title</th>
-        <th @click="onSort(`price`)" class="caption__item" scope="col">price</th>
-        <th @click="onSort(`description`)" class="caption__item" scope="col">description</th>
+        <th @click="onSort(`id`)" class="caption__item caption__item--sortable" scope="col">id</th>
+        <th @click="onSort(`title`)" class="caption__item caption__item--sortable" scope="col">title</th>
+        <th @click="onSort(`price`)" class="caption__item caption__item--sortable" scope="col">price</th>
+        <th @click="onSort(`description`)" class="caption__item caption__item--sortable" scope="col">description</th>
         <th class="caption__item" scope="col">edit</th>
       </tr>
     </thead>
@@ -40,14 +40,19 @@
     //
     &__item {
       text-transform: uppercase;
+      text-align: center;
       font-size: .96rem;
-      cursor: pointer;
-      color: forestgreen;
-      transition: color .2s;
 
-      &:hover {
-        color: darkgreen;
+      &--sortable {
+        transition: color .2s;
+        cursor: pointer;
+        color: forestgreen;
+
+        &:hover {
+          color: darkgreen;
+        }
       }
+
     }
   }
 </style>
