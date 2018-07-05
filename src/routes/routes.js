@@ -18,11 +18,6 @@ export default [
       { path: ':id', component: ManagerDetail, name: 'manager' }
     ]
   },
-  // {
-  //   path: '/managers/:id',
-  //   name: 'manager',
-  //   component: ManagerDetail
-  // },
   {
     path: '/orders',
     name: 'orders',

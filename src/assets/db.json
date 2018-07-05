@@ -11,12 +11,16 @@
       "photo": "http://via.placeholder.com/350x150",
       "orders": [
         {
-          "id": "21",
-          "title": "order title 21",
-          "image": "http://via.placeholder.com/350x150",
-          "description": "order description",
-          "price": "12.99",
+          "id": "1",
           "amount": "5"
+        },
+        {
+          "id": "10",
+          "amount": "8"
+        },
+        {
+          "id": "7",
+          "amount": "12"
         }
       ]
     },
@@ -31,12 +35,12 @@
       "photo": "http://via.placeholder.com/350x150",
       "orders": [
         {
-          "id": "12",
-          "title": "order title 12",
-          "image": "http://via.placeholder.com/350x150",
-          "description": "order description",
-          "price": "23.99",
+          "id": "2",
           "amount": "2"
+        },
+        {
+          "id": "9",
+          "amount": "12"
         }
       ]
     },
@@ -51,27 +55,15 @@
       "photo": "http://via.placeholder.com/350x150",
       "orders": [
         {
-          "id": "32",
-          "title": "order title 32",
-          "image": "http://via.placeholder.com/350x150",
-          "description": "order description",
-          "price": "9.99",
+          "id": "3",
           "amount": "6"
         },
         {
-          "id": "34",
-          "title": "order title 34",
-          "image": "http://via.placeholder.com/350x150",
-          "description": "order description",
-          "price": "3.99",
+          "id": "4",
           "amount": "2"
         },
         {
-          "id": "38",
-          "title": "order title 38",
-          "image": "http://via.placeholder.com/350x150",
-          "description": "order description",
-          "price": "8.99",
+          "id": "5",
           "amount": "4"
         }
       ]
@@ -87,22 +79,86 @@
       "photo": "http://via.placeholder.com/350x150",
       "orders": [
         {
-          "id": "11",
-          "title": "order title 11",
-          "image": "http://via.placeholder.com/350x150",
-          "description": "order description",
-          "price": "11.99",
+          "id": "6",
           "amount": "8"
         },
         {
-          "id": "13",
-          "title": "order title 13",
-          "image": "http://via.placeholder.com/350x150",
-          "description": "order description",
-          "price": "3.99",
+          "id": "7",
           "amount": "12"
         }
       ]
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "title": "order title 1",
+      "image": "http://via.placeholder.com/350x150",
+      "description": "order description",
+      "price": "12.99"
+    },
+    {
+      "id": "2",
+      "title": "order title 2",
+      "image": "http://via.placeholder.com/350x150",
+      "description": "order description",
+      "price": "23.99"
+    },
+    {
+      "id": "3",
+      "title": "order title 3",
+      "image": "http://via.placeholder.com/350x150",
+      "description": "order description",
+      "price": "9.99"
+    },
+    {
+      "id": "4",
+      "title": "order title 4",
+      "image": "http://via.placeholder.com/350x150",
+      "description": "order description",
+      "price": "3.99"
+    },
+    {
+      "id": "5",
+      "title": "order title 5",
+      "image": "http://via.placeholder.com/350x150",
+      "description": "order description",
+      "price": "8.99"
+    },
+    {
+      "id": "6",
+      "title": "order title 6",
+      "image": "http://via.placeholder.com/350x150",
+      "description": "order description",
+      "price": "11.99"
+    },
+    {
+      "id": "7",
+      "title": "order title 7",
+      "image": "http://via.placeholder.com/350x150",
+      "description": "order description",
+      "price": "3.99"
+    },
+    {
+      "id": "8",
+      "title": "order title 8",
+      "image": "http://via.placeholder.com/350x150",
+      "description": "order description",
+      "price": "4.99"
+    },
+    {
+      "id": "9",
+      "title": "order title 9",
+      "image": "http://via.placeholder.com/350x150",
+      "description": "order description",
+      "price": "5.99"
+    },
+    {
+      "id": "10",
+      "title": "order title 10",
+      "image": "http://via.placeholder.com/350x150",
+      "description": "order description",
+      "price": "6.99"
     }
   ]
 }

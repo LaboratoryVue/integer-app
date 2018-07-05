@@ -3,7 +3,7 @@
     <img class="card-img-top" :src="manager.photo" :alt="manager.firstName">
     <div class="card-body">
       <section class="mb-4">
-        <h5 class="card-title text-capitalize manager__title">{{ managerFullName }}</h5>
+        <h5 class="card-title text-capitalize manager__title">manager {{ managerFullName }}</h5>
         <ul class="list-group">
           <li class="list-group-item">
             <span class="manager__detail">id:</span><span>{{ manager.id }}</span>
@@ -16,18 +16,20 @@
           </li>
         </ul>
       </section>
-      <section>
-        <h6 class="card-title text-capitalize manager__title">{{ managerFullName }} orders</h6>
-        <div class="list-group">
-          <a
-            v-for="order in manager.orders"
-            :key="order"
-            href="#"
-            class="list-group-item list-group-item-action">
-              <span>{{ order.title }}</span>
+      <transition name="fade">
+        <section>
+          <h6 class="card-title text-capitalize manager__title">{{ managerFullName }} orders</h6>
+          <div class="list-group">
+            <a
+              v-for="order in manager.orders"
+              :key="order.id"
+              href="#"
+              class="list-group-item list-group-item-action">
+                <span>{{ order.title }}</span>
             </a>
-        </div>
-      </section>
+          </div>
+        </section>
+      </transition>
     </div>
   </div>
 </template>
@@ -61,5 +63,14 @@ export default {
       margin-right: .2rem;
       font-size: 1rem;
     }
+  }
+  // -------------
+  // ANIMATION
+  // -------------
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
   }
 </style>
