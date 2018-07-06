@@ -1,5 +1,5 @@
 <template>
-  <div class="jumbotron jumbotron-fluid">
+  <div class="jumbotron jumbotron-fluid border border-info rounded">
     <div class="container">
       <h1 class="display-6 text-center text-capitalize mb-4">detail information managers</h1>
       <article class="text-center">

@@ -13,10 +13,9 @@ export default [
   },
   {
     path: '/managers',
-    name: 'managers',
     component: Managers,
     children: [
-      { path: '', component: ManagerDetailHome },
+      { path: '', component: ManagerDetailHome, name: 'managers' },
       { path: ':id', component: ManagerDetail, name: 'manager' }
     ]
   },

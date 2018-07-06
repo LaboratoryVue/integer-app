@@ -1,7 +1,7 @@
 <template>
   <div class="order">
     <section class="manager mb-4">
-      <h3 class="text-capitalize text-right">current manager is: <strong>{{ fullName }}</strong></h3>
+      <h3 class="text-capitalize text-right">current manager is: <strong style="color: forestgreen">{{ fullName }}</strong></h3>
     </section>
     <hr>
     <form @submit.prevent="onSubmit()">
@@ -25,7 +25,7 @@
         <label class="order__label" for="order_price">order price</label>
         <input v-model="order.price" type="number" class="form-control" id="order_price" name="order_price" placeholder="order price">
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button :disabled="disabled" type="submit" class="btn btn-primary btn-block text-uppercase">submit</button>
     </form>
   </div>
 </template>
@@ -51,7 +51,7 @@ export default {
       for (let key in this.order) {
         this.order[key] = null;
       }
-      this.$router.push({ name: 'orders' });
+      this.$router.push({ name: 'managers' });
     }
   },
   computed: {
@@ -60,6 +60,9 @@ export default {
     },
     fullName() {
       return `${this.manager.firstName} ${this.manager.lastName}`;
+    },
+    disabled() {
+      return this.order.id === null || this.order.title === null || this.order.image === null || this.order.description === null || this.order.price === null ? true : false;
     }
   }
 };
