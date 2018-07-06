@@ -23,10 +23,8 @@
           <a
             v-for="order in manager.orders"
             :key="order.id"
-            href="#"
-            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center mb-1">
+            class="list-group-item d-flex justify-content-between align-items-center mb-1">
             <span class="text-capitalize">order id: {{ order.id }}</span>
-            <span class="text-capitalize">order amount: {{ order.amount }}</span>
           </a>
         </div>
       </section>

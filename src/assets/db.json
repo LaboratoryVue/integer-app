@@ -11,16 +11,13 @@
       "photo": "http://via.placeholder.com/350x150",
       "orders": [
         {
-          "id": "1",
-          "amount": "5"
+          "id": "1"
         },
         {
-          "id": "10",
-          "amount": "8"
+          "id": "10"
         },
         {
-          "id": "7",
-          "amount": "12"
+          "id": "7"
         }
       ]
     },
@@ -35,12 +32,10 @@
       "photo": "http://via.placeholder.com/350x150",
       "orders": [
         {
-          "id": "2",
-          "amount": "2"
+          "id": "2"
         },
         {
-          "id": "9",
-          "amount": "12"
+          "id": "9"
         }
       ]
     },
@@ -55,16 +50,13 @@
       "photo": "http://via.placeholder.com/350x150",
       "orders": [
         {
-          "id": "3",
-          "amount": "6"
+          "id": "3"
         },
         {
-          "id": "4",
-          "amount": "2"
+          "id": "4"
         },
         {
-          "id": "5",
-          "amount": "4"
+          "id": "5"
         }
       ]
     },
@@ -79,12 +71,10 @@
       "photo": "http://via.placeholder.com/350x150",
       "orders": [
         {
-          "id": "6",
-          "amount": "8"
+          "id": "6"
         },
         {
-          "id": "7",
-          "amount": "12"
+          "id": "7"
         }
       ]
     }
@@ -95,70 +85,70 @@
       "title": "a order title 1",
       "image": "http://via.placeholder.com/350x150",
       "description": "a order description",
-      "price": "12.99"
+      "price": "12"
     },
     {
       "id": "2",
       "title": "b order title 2",
       "image": "http://via.placeholder.com/350x150",
       "description": "b order description",
-      "price": "23.99"
+      "price": "23"
     },
     {
       "id": "3",
       "title": "c order title 3",
       "image": "http://via.placeholder.com/350x150",
       "description": "c order description",
-      "price": "9.99"
+      "price": "9"
     },
     {
       "id": "4",
       "title": "d order title 4",
       "image": "http://via.placeholder.com/350x150",
       "description": "d order description",
-      "price": "2.99"
+      "price": "2"
     },
     {
       "id": "5",
       "title": "e order title 5",
       "image": "http://via.placeholder.com/350x150",
       "description": "e order description",
-      "price": "8.99"
+      "price": "8"
     },
     {
       "id": "6",
       "title": "f order title 6",
       "image": "http://via.placeholder.com/350x150",
       "description": "f order description",
-      "price": "11.99"
+      "price": "11"
     },
     {
       "id": "7",
       "title": "g order title 7",
       "image": "http://via.placeholder.com/350x150",
       "description": "g order description",
-      "price": "3.99"
+      "price": "3"
     },
     {
       "id": "8",
       "title": "h order title 8",
       "image": "http://via.placeholder.com/350x150",
       "description": "h order description",
-      "price": "4.99"
+      "price": "4"
     },
     {
       "id": "9",
       "title": "i order title 9",
       "image": "http://via.placeholder.com/350x150",
       "description": "i order description",
-      "price": "5.99"
+      "price": "5"
     },
     {
       "id": "10",
       "title": "j order title 10",
       "image": "http://via.placeholder.com/350x150",
       "description": "j order description",
-      "price": "6.99"
+      "price": "6"
     }
   ]
 }
